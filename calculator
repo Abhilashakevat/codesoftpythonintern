@@ -1,0 +1,127 @@
+from tkinter import*
+root=Tk()
+#root.geometry('120x140')
+root.title("calculator")
+def button_one(v):
+    t1.insert(END,v)
+    return
+def button_two(v):
+    t1.insert(END,v)
+    return
+def button_three(v):
+    t1.insert(END,v)
+    return
+def button_four(v):
+    t1.insert(END,v)
+    return
+def button_five(v):
+    t1.insert(END,v)
+    return
+def button_six(v):
+    t1.insert(END,v)
+    return
+def button_seven(v):
+    t1.insert(END,v)
+    return
+def button_eight(v):
+    t1.insert(END,v)
+    return
+def button_nine(v):
+    t1.insert(END,v)
+    return
+def button_zero(v):
+    t1.insert(END,v)
+    return
+def button_addbtn(v):
+    t1.insert(END,v)
+    return
+def button_minusbtn(v):
+    t1.insert(END,v)
+    return
+def button_multibtn(v):
+    t1.insert(END,v)
+    return
+def button_divbtn(v):
+    t1.insert(END,v)
+    return
+def equal():
+    expr=t1.get()
+    for op in "+-*/":
+      if op in expr and op=="+":
+        a, b = expr.split(op)
+        a, b = int(a), int(b)
+        sum=a+b
+        t1.delete(0,END)
+        t1.insert(END,sum)
+      elif op in expr and op=="-":
+        a, b = expr.split(op)
+        a, b = int(a), int(b)
+        sum=a-b
+        t1.delete(0,END)
+        t1.insert(END,sum)
+      elif op in expr and op=="*":
+        a, b = expr.split(op)
+        a, b = int(a), int(b)
+        sum=a*b
+        t1.delete(0,END)
+        t1.insert(END,sum)
+      elif op in expr and op=="/":
+        a, b = expr.split(op)
+        a, b = int(a), int(b)
+        sum=a/b
+        t1.delete(0,END)
+        t1.insert(END,sum)
+
+def bacck():
+    expr=t1.get()
+    t1.delete(len(expr)-1,END)
+    t1.focus()
+    return
+
+datafrme=Frame(root,bg="yellow",height=400,width=200)
+datafrme.grid()
+
+t1=Entry(datafrme,font="verdana 14 bold",width=10)
+t1.grid(row=0,column=0)
+
+
+
+br11=Button(datafrme,text="1",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_one("1"))
+br12=Button(datafrme,text="2",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_two("2"))
+br13=Button(datafrme,text="3",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_three("3"))
+br14=Button(datafrme,text="+",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_addbtn("+"))
+br11.grid(row=1,column=0)
+br12.grid(row=1,column=1)
+br13.grid(row=1,column=2)
+br14.grid(row=1,column=3)
+
+br21=Button(datafrme,text="4",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_four("4"))
+br22=Button(datafrme,text="5",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_five("5"))
+br23=Button(datafrme,text="6",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_six("6"))
+br24=Button(datafrme,text="-",font="verdana 18 bold",width=10,bg="yellow", command=lambda: button_minusbtn("-"))
+br21.grid(row=2,column=0)
+br22.grid(row=2,column=1)
+br23.grid(row=2,column=2)
+br24.grid(row=2,column=3)
+
+br31=Button(datafrme,text="7",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_seven("7"))
+br32=Button(datafrme,text="8",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_eight("8"))
+br33=Button(datafrme,text="9",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_nine("9"))
+br34=Button(datafrme,text="*",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_multibtn("*"))
+br31.grid(row=3,column=0)
+br32.grid(row=3,column=1)
+br33.grid(row=3,column=2)
+br34.grid(row=3,column=3)
+
+br31=Button(datafrme,text="=",font="verdana 18 bold",width=10,bg="blue",command=equal)
+br32=Button(datafrme,text="0",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_zero("0"))
+br33=Button(datafrme,text="Back",font="verdana 18 bold",width=10,bg="blue",command=bacck)
+br34=Button(datafrme,text="/",font="verdana 18 bold",width=10,bg="yellow",command=lambda: button_divbtn("/"))
+br31.grid(row=4,column=0)
+br32.grid(row=4,column=1)
+br33.grid(row=4,column=2)
+br34.grid(row=4,column=3)
+
+
+root.mainloop()
+
